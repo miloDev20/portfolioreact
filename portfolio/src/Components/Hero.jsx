@@ -1,11 +1,16 @@
 import { ArrowDown } from "lucide-react";
 
+import AnimatedStars from "./AnimatedStars";
+
+
+
 export const Hero = () =>{
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-4"
     >
+      <AnimatedStars/>
 
       {/* Contenido principal */}
       <div className="relative z-10 max-w-3xl animate-fade-in">
