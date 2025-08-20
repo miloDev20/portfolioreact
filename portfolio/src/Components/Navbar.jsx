@@ -1,65 +1,93 @@
-import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const navItems = [
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
 
-  const links = [
-    { name: "About Me", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("scrolled" +" " +window.scrollY.toString());
+      
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <nav className=" w-full top-5 left-5 z-50 bg-background/80 backdrop-blur-md border-b">
-      <div className="container flex justify-between items-center py-4">
-        {/* Logo */}
+    <nav
+      className={cn(
+        "fixed w-full z-40 transition-all duration-300",
+        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+      )}
+    >
+      <div className="container flex items-center justify-between">
         <a
-          href="#"
-          className="text-2xl font-bold text-primary text-glow tracking-wide hover:opacity-80 transition"
+          className="text-xl font-bold text-primary flex items-center"
+          href="#hero"
         >
-          MyPortfolio
+          <span className="relative z-10">
+            <span className="text-glow text-foreground"> PedroTech </span>{" "}
+            Portfolio
+          </span>
         </a>
 
-        {/* Links - Desktop */}
-        <div className="hidden md:flex space-x-8 font-medium">
-          {links.map((link) => (
+        {/* desktop nav */}
+        <div className="hidden md:flex space-x-8">
+          {navItems.map((item, key) => (
             <a
-              key={link.name}
-              href={link.href}
-              className="hover:text-primary transition-colors"
+              key={key}
+              href={item.href}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
-              {link.name}
+              {item.name}
             </a>
           ))}
         </div>
 
-        {/* Botón menú hamburguesa - Mobile */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden hover:text-primary transition"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
+        {/* mobile nav */}
 
-      {/* Menú desplegable en móvil */}
-      {isOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b animate-fade-in">
-          <div className="flex flex-col items-center space-y-6 py-6">
-            {links.map((link, i) => (
+        <button
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          className="md:hidden p-2 text-foreground z-50"
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+        </button>
+
+        <div
+          className={cn(
+            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
+            "transition-all duration-300 md:hidden",
+            isMenuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          )}
+        >
+          <div className="flex flex-col space-y-8 text-xl">
+            {navItems.map((item, key) => (
               <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`text-lg font-medium hover:text-primary transition-colors animate-fade-in-delay-${i+1}`}
+                key={key}
+                href={item.href}
+                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
               >
-                {link.name}
+                {item.name}
               </a>
             ))}
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
-}
+};
