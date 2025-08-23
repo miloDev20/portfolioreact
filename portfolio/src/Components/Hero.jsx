@@ -1,9 +1,6 @@
 import { ArrowDown } from "lucide-react";
 
 
-
-
-
 export const Hero = () =>{
   return (
     <section
