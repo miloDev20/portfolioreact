@@ -6,6 +6,8 @@ import { ThemeToggle } from "../Components/ThemeToggle";
 import AnimatedStars from "../Components/AnimatedStars";
 import { ProjectsSection } from "../Components/ProjectSection";
 import { SkillsSection } from "../Components/SkillsSection";
+import { ContactSection } from "../Components/ContactSection";
+import { Footer } from "../Components/footer";
 
 export const Home = () => {
     return <div className="min-h-screen" >
@@ -21,10 +23,11 @@ export const Home = () => {
         {/*Main Content */}
         <Hero/>
         <AboutSection/>
-        <ProjectsSection />
         <SkillsSection/>
+        <ProjectsSection/>
+        <ContactSection/>
         {/*Footer */}
-
+        <Footer/>
 
 
 
