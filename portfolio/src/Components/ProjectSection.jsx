@@ -16,9 +16,19 @@ const projects = [
     description:
       "Serious game about the problems of immigration. Academic project made for Medics San Frontiers.",
     image: "../src/assets/projects/PaperBoats.png",
-    tags: ["Unity2D", "C#", "Github"],
+    tags: ["Unity2D", "C#", "Git"],
     demoUrl: "https://cimagames.itch.io/paper-boats",
     githubUrl: "https://github.com/al406608/PaperBoatsProject",
+  },
+    {
+    id: 3,
+    title: "Mystic Altar",
+    description:
+      "Final degree project, made with Unity Shader Graph. ",
+    image: "../src/assets/projects/TFGScene.png",
+    tags: ["Unity3D", "ShaderGraph", "Git"],
+    demoUrl: "https://al405059.itch.io/mystic-altar",
+    githubUrl: "https://github.com/miloDev20/TFG2025",
   },
 ];
 
@@ -32,8 +42,7 @@ export const ProjectsSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          Here are some of my academic projects. 
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
