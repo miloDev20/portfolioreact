@@ -29,7 +29,6 @@ const skills = [
   { name: "Unity", level: 95, category: "tools" },
   { name: "Android Studio", level: 80, category: "tools" },
   { name: "Linux", level: 60, category: "tools" },
-  { name: "Android Studio", level: 40, category: "tools" },
   { name: "Unity 3D", level: 70, category: "tools" },
   { name: "Blender", level: 50, category: "tools" },
   { name: "Photoshop", level: 40, category: "tools" },
