@@ -5,7 +5,7 @@ const projects = [
     id: 1,
     title: "Petpal",
     description: "An educational game to teach children to take care of a pet.",
-    image: "../src/assets/projects/PETPAL.png",
+    image: "/assets/projects/PETPAL.png",
     tags: ["Unity", "C#", "Git"],
     demoUrl: "https://militodev.itch.io/petpal",
     githubUrl: "#",
@@ -15,7 +15,7 @@ const projects = [
     title: "PaperBoats",
     description:
       "Serious game about the problems of immigration. Academic project made for Medics San Frontiers.",
-    image: "../src/assets/projects/PaperBoats.png",
+    image: "/assets/projects/PaperBoats.png",
     tags: ["Unity2D", "C#", "Git"],
     demoUrl: "https://cimagames.itch.io/paper-boats",
     githubUrl: "https://github.com/al406608/PaperBoatsProject",
@@ -25,7 +25,7 @@ const projects = [
     title: "Mystic Altar",
     description:
       "Final degree project, made with Unity Shader Graph. ",
-    image: "../src/assets/projects/TFGScene.png",
+    image: "/assets/projects/TFGScene.png",
     tags: ["Unity3D", "ShaderGraph", "Git"],
     demoUrl: "https://al405059.itch.io/mystic-altar",
     githubUrl: "https://github.com/miloDev20/TFG2025",
