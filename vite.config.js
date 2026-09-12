@@ -16,5 +16,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     }
   },
-  base: '/portfolioreact/'
+  base: '/portfolioreact/',
 })
