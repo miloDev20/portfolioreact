@@ -8,7 +8,7 @@ const projects = [
     image: "assets/projects/PETPAL.png", // Quitamos "public/"
     tags: ["Unity", "C#", "Git"],
     demoUrl: "https://militodev.itch.io/petpal",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Droxord/JuegoDidactico",
   },
   {
     id: 2,
